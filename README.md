@@ -1,24 +1,69 @@
-**New: [wireguard-install](https://github.com/Nyr/wireguard-install) is also available.**
+OpenVPN Install — редакция leric1977
 
-## openvpn-install
-OpenVPN [road warrior](http://en.wikipedia.org/wiki/Road_warrior_%28computing%29) installer for Ubuntu, Debian, AlmaLinux, Rocky Linux, CentOS and Fedora.
+Скрипт автоматической установки и управления сервером OpenVPN для Linux.
 
-This script will let you set up your own VPN server in no more than a minute, even if you haven't used OpenVPN before. It has been designed to be as unobtrusive and universal as possible.
+Репозиторий основан на проекте Nyr/openvpn-install и сохраняет совместимость с оригинальным установочным скриптом.
 
-### Installation
-Run the script and follow the assistant:
+Поддерживаемые системы
+Debian
+Ubuntu
+AlmaLinux
+Rocky Linux
+CentOS
+Fedora
 
-```plain text
-wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
-```
+Скрипт необходимо запускать от имени пользователя root.
 
-Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
+Быстрая установка
+wget https://raw.githubusercontent.com/leric1977/openvpn-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
+./openvpn-install.sh
 
-### I want to run my own VPN but don't have a server for that
-You can get a VPS from just [2 EUR](https://alphavps.com/clients/aff.php?aff=474&pid=457&currency=1) or [2 USD](https://alphavps.com/clients/aff.php?aff=474&pid=457&currency=6) per month at [AlphaVPS](https://alphavps.com/clients/aff.php?aff=474&pid=457&currency=1).
+Также можно выполнить одной командой:
 
-### Donations
-If you want to show your appreciation, you can donate via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VBAYDL34Z7J6L) or [cryptocurrency](https://pastebin.com/raw/M2JJpQpC). Thanks!
+wget -qO openvpn-install.sh https://raw.githubusercontent.com/leric1977/openvpn-install/master/openvpn-install.sh && chmod +x openvpn-install.sh && ./openvpn-install.sh
+Управление OpenVPN
 
-### Sponsors
-VPN without the terminal? Point-and-click deployment + free VPS, live in 3 min. Try free, then $1/mo — [Clever VPN](https://www.clever-vpn.net/en/landing-vpn?wg-referral=01LOULuQoi).
+После первоначальной установки повторно запустите скрипт:
+
+./openvpn-install.sh
+
+С помощью меню можно:
+
+создать нового клиента;
+отозвать существующий клиентский сертификат;
+удалить OpenVPN;
+выйти из программы.
+Обновление скрипта
+
+Если репозиторий уже склонирован:
+
+cd /opt/openvpn-install
+git pull origin master
+Синхронизация с оригинальным проектом
+
+В локальной копии настроены два источника:
+
+origin — репозиторий leric1977/openvpn-install;
+upstream — оригинальный репозиторий Nyr/openvpn-install.
+
+Получение последних изменений оригинального проекта:
+
+cd /opt/openvpn-install
+git fetch upstream
+git log --oneline --decorate --graph --all -20
+
+Изменения из оригинального проекта следует объединять только после проверки совместимости с редакцией leric1977.
+
+Происхождение проекта
+
+Основано на проекте:
+
+автор оригинального проекта: Nyr;
+оригинальный репозиторий: Nyr/openvpn-install;
+пользовательская редакция: leric1977/openvpn-install.
+Лицензия
+
+Проект распространяется по лицензии MIT.
+
+Оригинальный текст лицензии сохранён в файле LICENSE.txt.
